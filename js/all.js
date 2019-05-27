@@ -774,3 +774,63 @@ function login(e) {
     }
 }
 getLogin.addEventListener('click', login);
+
+// 0527 ES6
+var a = 1;
+console.log(a);
+for (var z = 0; z < 3; z++) {
+    console.log(z);
+}
+
+// let const
+if (3 > 2) {
+    let cc = 2;
+}
+
+var b = 1;
+
+function changeA() {
+    let b = 2;
+    console.log('change', b);
+}
+changeA();
+console.log('b', b);
+
+// let-for
+// for用let宣告，會做重新綁定
+const ulLen = document.querySelectorAll('.ules li').length;
+
+for (let i = 0; i < ulLen; i++) {
+    document.querySelectorAll('.ules li')[i]
+        .addEventListener('click', check);
+
+    function check() {
+        alert(i + 1);
+    }
+}
+
+// const
+const d = 2;
+// d = 1;
+// console.log(d);
+
+const dd = {
+    url: '1234',
+};
+Object.freeze(dd);
+dd.url = '1';
+console.log(dd.url);
+
+// let、const使用時機與注意事項
+var r; // var可以讓變數向上提升創建一個r出來
+console.log(r); // undefind
+var r = 2;
+console.log(r); // 2
+
+// console.log(w); // error Cannot access 'w' before initialization
+// let w = 1;
+// console.log(w); // 1
+
+let f = 2;
+let f = 1;
+console.log(f);
